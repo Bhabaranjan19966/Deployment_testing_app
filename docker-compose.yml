@@ -6,11 +6,11 @@ services:
     environment:
       - HPORT=5010
     links:
-      - mongo
+      - mongo_sample
     ports:
       - 5010:5000  
     depends_on:
-      - mongo
+      - mongo_sample
   
   
   mongo_sample:
