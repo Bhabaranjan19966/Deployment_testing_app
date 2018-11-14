@@ -1,0 +1,21 @@
+version: '3'
+services:
+  deployed_app:
+    container_name: backend_deployed
+    build: ./server/.
+    environment:
+      - HPORT=5010
+    links:
+      - mongo
+    ports:
+      - 5010:5000  
+    depends_on:
+      - mongo
+  
+  
+  mongo_sample:
+    container_name: database_deployed
+    image: mongo
+    ports:
+      - 27012:27017
+
